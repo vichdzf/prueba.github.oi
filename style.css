@@ -1,0 +1,17 @@
+.contenedor{
+
+    display: flex;
+
+}
+.text{
+    align-self: center;
+ padding: 55px;
+}
+
+.direccion{
+
+align-self: center;
+text-decoration: none;
+color: black;
+
+}

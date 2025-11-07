@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+  .message{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin: 4px 0;
+    padding: 4px 8px;
+    >span:first-child{
+        width: 36px;
+        height: 36px;
+        background-color: #eee;
+        font-size: 12px;
+        font-weight: 500;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 1000;
+    }
+>span :last-child{
+
+    padding: 4px 8px;
+    border-radius: 4px;
+    margin-top: 4px;
+}
+
+&.user{
+    align-self: flex-end;
+    align-items: flex-end;
+    span{
+        background: rgb(219, 236, 255)
+    }
+}
+&.bot{
+    align-self: flex-start;
+    span{
+        background: rgb(198, 255, 220);
+    }
+
+}
+  }  
+ body{ font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+background-attachment: #f0f0f0;
+display: grid;
+place-content: center;
+height: 100dvh;
+
+ }   
+form{
+    display: flex;
+    input{
+        border-radius: 9999999px;
+        flex-grow: 1;
+        border: 0;
+        padding: 8px;
+        margin-right: 8px;
+        border: 1px solid #ccc;
+    }
+    button {
+
+        background: #09f;
+        border: 0;
+        color: white;
+        border-radius: 6px;
+        cursor: pointer;
+        padding: 8px;
+        transition: background .3s ease;
+        &:hover{
+            background: rgb( 0, 104, 173);
+        }
+    }
+}
+ main{
+    width: 400px;
+    max-width: 100%;
+    height: 70vh;
+background-color: #ffff;
+border: 1px solid #ccc;
+border-radius: 4px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+padding: 8px;
+margin-bottom: 16px;
+overflow-y: auto;
+scroll-behavior: smooth;
+ }
+ul{
+display: flex;
+flex-direction: column;
+gap: 4px;
+margin: 4px;
+padding: 4px;
+
+}
+</style>
+<body>
+    
+    <main>
+        <ul>
+            <li class="message bot">
+                <span>bot</span>
+                <span>esta es la respuesta del bot</span>
+            </li>
+            <li class="message user">
+                <span>tu</span>
+                <span>esta es la respuesta del usuario</span>
+            </li>
+        </ul>
+    </main>
+<form>
+    <input type="text" name="mensaje" placeholder="escribe tu mensaje">
+    <button>enviar</button>
+</form>
+
+<template id="message-template">
+<li class="message">
+<span></span>
+<span></span>
+</li>
+</template>
+
+<script type="module">
+    const $ = el => document.querySelector(el)
+    const $form = $('form')
+    const $input = $('input')
+    const $template = $('#message-template')
+    const $message = $('ul')
+    const $container = $('main')
+    const $button = $('button')
+   
+$form.addEventListener('submit', (event) {
+    event.preventDefault()
+    const messagetext = input.value.trim() 
+    if(messagetext )  
+})
+function addmessage(text, sender){
+    const clonedtemplate =$template.content.clonenode(true)
+    const $newmessage = clonedtemplate.querySelector('.message')
+    const $who  =$newmessage.querySelector('span')
+    const $text =$newmessage.querySelector('span')
+    
+}
+
+</script>
+</body>
+</html>
